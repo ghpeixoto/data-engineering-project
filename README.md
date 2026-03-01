@@ -1,4 +1,4 @@
-# Teste Tecnico: Engenharia de Dados (PySpark & SparkSQL)
+# Teste Tecnico:
 
 Bem-vindo(a) ao repositorio do meu teste tecnico para a posicao de Engenharia de Dados. Este projeto tem como objetivo processar, limpar e analisar dados de telefonia, vendas e avaliacoes de uma central de atendimento, alem de construir um pipeline de dados (ETL) otimizado para producao.
 
