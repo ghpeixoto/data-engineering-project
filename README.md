@@ -1,21 +1,21 @@
-# Teste Tecnico:
+# Teste Técnico:
 
-Bem-vindo(a) ao repositorio do meu teste tecnico para a posicao de Engenharia de Dados. Este projeto tem como objetivo processar, limpar e analisar dados de telefonia, vendas e avaliacoes de uma central de atendimento, alem de construir um pipeline de dados (ETL) otimizado para producao.
+Bem-vindo(a) ao repositorio do meu teste técnico. Este projeto tem como objetivo processar, limpar e analisar dados de telefonia, vendas e avaliacoes de uma central de atendimento, alem de construir um pipeline de dados (ETL) otimizado para producao.
 
 ## Objetivos do Projeto
 
 O teste foi dividido em duas frentes principais:
-1. Analise Exploratoria de Dados (EDA): Responder a perguntas de negocio sobre performance de vendedores, ticket medio, tempo de atendimento e qualidade das avaliacoes.
-2. Pipeline de Dados (ETL): Desenvolver um script para gerar uma tabela consolidada com o valor total de vendas diarias agrupadas por lideranca, salva em formato otimizado.
+1. Analise Exploratoria de Dados: Responder a perguntas de negocio sobre performance de vendedores, ticket medio, tempo de atendimento e qualidade das avaliacoes.
+2. Pipeline de Dados: Desenvolver um script para gerar uma tabela consolidada com o valor total de vendas diarias agrupadas por lideranca, salva em formato otimizado.
 
 ---
 
 ## Tecnologias Utilizadas
 * Python 3.12
-* Apache Spark / PySpark (Processamento Distribuido)
-* SparkSQL (Consultas analiticas complexas)
-* Jupyter Notebook (Data Storytelling e prototipacao)
-* Parquet (Armazenamento colunar otimizado)
+* Apache Spark / PySpark 
+* SparkSQL 
+* Jupyter Notebook 
+* Parquet 
 
 ---
 
@@ -23,9 +23,9 @@ O teste foi dividido em duas frentes principais:
 
 Durante a exploracao dos dados, identifiquei e tratei anomalias e regras de negocio estritas para garantir a integridade da analise final:
 
-* Tratamento de Anomalias de Tempo (Erros de Sistema): Foram identificados registros na base de telefonia onde a data de fim_ligacao era anterior a data de inicio_ligacao (gerando tempos negativos irreais). Esses registros foram isolados para nao corromper a media de tempo de atendimento.
+* Tratamento de Anomalias de Tempo: Foram identificados registros na base de telefonia onde a data de fim_ligacao era anterior a data de inicio_ligacao (gerando tempos negativos). Esses registros foram isolados para nao corromper a media de tempo de atendimento.
 * Filtro de "Vendas Falsas": O calculo de Ticket Medio foi blindado para considerar estritamente os registros onde a coluna Motivo e igual a "Venda", ignorando contatos de "Reclamacao" ou "Informacao" que pudessem ter valores preenchidos indevidamente.
-* Preservacao de Faturamento da Alta Gestao (Lideranca Nula): Na base de pessoas, cargos de alto escalao (como Gerencia) nao possuem um Lider direto (valor NULL). No pipeline de ETL, aplicou-se a funcao COALESCE (e .fillna()) para atribuir a tag "Sem Lideranca", garantindo que o faturamento diario desses colaboradores nao fosse descartado nos Joins e Agrupamentos.
+* Preservacao de Faturamento da Alta Gestao: Na base de pessoas, cargos de alto escalao (como Gerencia) nao possuem um Lider direto (valor NULL). No pipeline de ETL, aplicou-se a funcao COALESCE (e .fillna()) para atribuir a tag "Sem Lideranca", garantindo que o faturamento diario desses colaboradores nao fosse descartado nos Joins e Agrupamentos.
 
 ---
 
@@ -37,7 +37,7 @@ Para demonstrar versatilidade, a solucao foi desenvolvida em tres formatos disti
 2. Scripts em PySpark/: Scripts Python (.py) prontos para producao, utilizando a API de DataFrames do PySpark de forma modular.
 3. Script em SparkSQL/: Abordagem utilizando a API SQL do Spark (spark.sql()), demonstrando dominio sobre a linguagem universal de dados.
 
-### Requisitos Tecnicos de Saida Atendidos
+### Requisitos Técnicos de Saida Atendidos
 O pipeline de Vendas Diarias gera a saida respeitando rigorosamente os criterios estipulados:
 * Formato Parquet.
 * Particionado pela coluna de Lideranca.
@@ -56,7 +56,7 @@ Instale as dependencias:
 Bash
 pip install pyspark==3.5.1
 Execute os pipelines de ETL:
-Para rodar a versao em PySpark puro:
+Para rodar a versao em PySpark :
 
 Bash
 python3 "Scripts em PySpark/vendas_diarias.py"
