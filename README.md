@@ -1,6 +1,4 @@
-# Teste Técnico:
-
-Bem-vindo(a) ao repositorio do meu teste técnico. Este projeto tem como objetivo processar, limpar e analisar dados de telefonia, vendas e avaliacoes de uma central de atendimento, alem de construir um pipeline de dados (ETL) otimizado para producao.
+Este projeto tem como objetivo processar, limpar e analisar dados de telefonia, vendas e avaliacoes de uma central de atendimento, alem de construir um pipeline de dados (ETL) otimizado para producao.
 
 ## Objetivos do Projeto
 
